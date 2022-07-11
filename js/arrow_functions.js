@@ -19,36 +19,40 @@
 // console.log(stringReverse());
 
 //! Demo reduccion de codigo con el uso de arrow function
-// // ? Version 1
+// ? Version 1
 // const functionLarge = (a) => {
-//   // Code
+// Code
 //   return a + 1;
 // };
 
-// // ? Version 2
+// ? Version 2
 // const functionMedium = () => {
 //   a + 1;
 // };
 
-// // ? Version 3
+// ? Version 3
 // const functionSmall = () => a + 1;
 
-// Practica Grupal -> Identificar palidromo
+// !Practica Grupal -> Identificar palidromo
+// const isPalindrome = (str) => {
+//   // ?Limpiamos los espacios
+//   let strWithOutSpaces = str.trim().replaceAll(/\s/g, "").toLowerCase();
 
-// función de retorno
-const isPalindrome = (str) => {
-  let strWithOutSpaces = str.trim().replaceAll(/\s/g, "").toLowerCase();
-  let strReversed = "";
+//   // ? Creamos una variable donde almacenar la cadena invertida
+//   let strReversed = "";
 
-  for (i = strWithOutSpaces.length - 1; i >= 0; i--) {
-    strReversed += strWithOutSpaces[i];
-  }
+//   // ? Invertidos la cadena y almacenamos en nuestro espacio reservado
+//   for (i = strWithOutSpaces.length - 1; i >= 0; i--) {
+//     strReversed += strWithOutSpaces[i];
+//   }
 
-  if (strWithOutSpaces === strReversed) {
-    return "El string ingresado si es un palindromo";
-  } else {
-    return "El string ingresado no es un palindromo";
-  }
-};
+//   // ? Comparamos ambos y hacemos el return
+//   if (strWithOutSpaces === strReversed) {
+//     return "El string ingresado si es un palindromo";
+//   } else {
+//     return "El string ingresado no es un palindromo";
+//   }
+// };
 
-console.log(isPalindrome("osof"));
+// // ? Log del resultado
+// console.log(isPalindrome("osof"));
