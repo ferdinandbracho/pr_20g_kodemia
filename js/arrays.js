@@ -85,22 +85,3 @@
 // result = capitalize(["méxicO", "CaraCas", "Los AngelEs", "estaMbuL"]);
 
 // console.log(result);
-
-multidimensionalArray = [[12, 3, 4], ["asd", 123], "sgtring"];
-console.log(multidimensionalArray instanceof Array);
-
-multidimensionalArray.forEach((e) => {
-  if (e instanceof Array) {
-    e.forEach((e) => {
-      console.log(e);
-    });
-  } else {
-    console.log(e);
-  }
-});
-
-let name = "erdinand";
-
-if ("aeiou".includes(name[0])) {
-  console.log("start with vocal ");
-}
