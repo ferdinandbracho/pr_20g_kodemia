@@ -351,17 +351,17 @@ console.log(rest);
 S;
 
 //! filtrar y transformar un array
-let a = ["ferdinand", "ana"];
+// let a = ["ferdinand", "ana"];
 
-let rest = a
-  .filter((c) => {
-    if (c[0] === "a") {
-      return c;
-    }
-  })
-  .map((c) => {
-    return c[0].toUpperCase() + c.slice(1).toLocaleLowerCase();
-  });
+// let rest = a
+//   .filter((c) => {
+//     if (c[0] === "a") {
+//       return c;
+//     }
+//   })
+//   .map((c) => {
+//     return c[0].toUpperCase() + c.slice(1).toLocaleLowerCase();
+//   });
 
-console.log(rest);
-S;
+// console.log(rest);
+// S;
