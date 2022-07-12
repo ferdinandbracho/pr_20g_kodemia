@@ -289,3 +289,79 @@ let result = capitalizeMap1([
 ]);
 
 console.log(result);
+
+// Función que reciba un array de nombre y esta debe devolver un string con las iniciales de los nombre
+
+// getInitial(['Ferdinand','Jose','Maria','Dora']) -> FJMD
+
+const names = ["Ferdinand", "Jose", "Maria", "Dora"];
+
+result = names.reduce((acc, cv) => {
+  return (acc += cv[0]);
+}, "");
+
+console.log(result);
+
+function Mentor(nombre, apellido, edad, altura) {
+  this.nombre = nombre;
+  this.apellido = apellido;
+  this.edad = edad;
+  this.altura = altura;
+}
+
+ferdinand = new Mentor("ferdinand", "Bracho", 30, "1.79");
+
+console.log(ferdinand);
+
+/**
+ * Ejercicio 2.
+ * Dado un objeto inicial, hacer los siguientes puntos
+ *
+ * 1. Agregar el lenguaje 'Go' a la lista de lenguajes
+ * 2. Cambiar el nivel a 4
+ * 3. Eliminar la propiedad avatar
+ * 4. Agregar una nueva propiedad de edad y poner el valor de 30
+ * 5. Imprimir en consola todos los lenguajes dominados
+ * 6. Clonar el objeto en uno nuevo
+ * 7. Imprimir en consola el nuevo objeto
+ *
+ * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+ */
+
+let koder = {
+  languages: ["JavaScript", "Python", "Ruby"],
+  isMentor: true,
+  level: 3,
+  avatar: "https://picsum.photos/200/300",
+};
+
+let a = ["ferdinand", "ana"];
+
+let rest = a
+  .filter((c) => {
+    if (c[0] === "a") {
+      return c;
+    }
+  })
+  .map((c) => {
+    return c[0].toUpperCase() + c.slice(1).toLocaleLowerCase();
+  });
+
+console.log(rest);
+S;
+
+//! filtrar y transformar un array
+let a = ["ferdinand", "ana"];
+
+let rest = a
+  .filter((c) => {
+    if (c[0] === "a") {
+      return c;
+    }
+  })
+  .map((c) => {
+    return c[0].toUpperCase() + c.slice(1).toLocaleLowerCase();
+  });
+
+console.log(rest);
+S;
