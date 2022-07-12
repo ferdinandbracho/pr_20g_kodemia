@@ -234,28 +234,29 @@ console.log(soloPares);
 // Demo Reduce reducido
 
 //! Demo1  filterCities
-// let onlycities = [];
-// onlycities = [1, 2, 4, "México", "Perú", "España", 3].filter((element) => {
-//  // condicion
-//  if (typeof element === "string") {
-//    return element;
-//  }
-// });
-// console.log(onlycities);
+let onlycities = [];
+onlycities = [1, 2, 4, "México", "Perú", "España", 3].filter((element) => {
+  // condicion
+  if (typeof element === "string") {
+    return element;
+  }
+});
+console.log(onlycities);
 
 // //! filterCitiesReduced
-// let onlycities2 = [1, 2, 4, "México", "Perú", "España", 3].filter((element) => {
-//  return typeof element === "string" ? element : null;
-// });
-// console.log(onlycities2);
+let onlycities2 = [1, 2, 4, "México", "Perú", "España", 3].filter((element) => {
+  return typeof element === "string" ? element : null;
+});
+console.log(onlycities2);
 
 // //! filterCitiesMostReduced
-// const onlycities3 = [1, 2, 4, "México", "Perú", "España", 3].filter(
-//  (element) => {
-//    return typeof element === "string";
-//  }
-// );
-// console.log(onlycities3);
+const onlycities3 = [1, 2, 4, "México", "Perú", "España", 3].filter(
+  (element) => {
+    return typeof element === "string";
+  }
+);
+
+console.log(onlycities3);
 
 //! Practica Capitalized -> Pendiente
 
