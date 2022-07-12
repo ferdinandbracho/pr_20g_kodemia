@@ -201,12 +201,12 @@ capitalize(["méxicO", "RIo", "Los AngelEs"]);
 // * Usar el método de array Map
 // */
 
-const capitalizeMap = (arr) => {
-  let capCities = arr.map((city) => {
-    return `${city[0].toUpperCase()}${city.slice(1).toLowerCase()}`;
-  });
-  return capCities;
-};
+// const capitalizeMap = (arr) => {
+//   let capCities = arr.map((city) => {
+//     return `${city[0].toUpperCase()}${city.slice(1).toLowerCase()}`;
+//   });
+//   return capCities;
+// };
 
 //! 3. Filter
 // ! 3.1Crea un nuevo array filtrado
@@ -218,74 +218,74 @@ const capitalizeMap = (arr) => {
 //! 3.5 Crea un nuevo array con las modificaciones indicadas
 //! 3.6 La función callback debe tener un return
 
-let newArr = [10, 22, 30, 41];
+// let newArr = [10, 22, 30, 41];
 
-// -> [10,20,30]
+// // -> [10,20,30]
 
-let soloPares = newArr.filter((currentValue, index, copiaArrOriginal) => {
-  // Condicion
-  if (currentValue % 2 === 0) {
-    return currentValue;
-  }
-});
+// let soloPares = newArr.filter((currentValue, index, copiaArrOriginal) => {
+//   // Condicion
+//   if (currentValue % 2 === 0) {
+//     return currentValue;
+//   }
+// });
 
-console.log(soloPares);
+// console.log(soloPares);
 
-// Demo Reduce reducido
+// // Demo Reduce reducido
 
-//! Demo1  filterCities
-let onlycities = [];
-onlycities = [1, 2, 4, "México", "Perú", "España", 3].filter((element) => {
-  // condicion
-  if (typeof element === "string") {
-    return element;
-  }
-});
-console.log(onlycities);
+// //! Demo1  filterCities
+// let onlycities = [];
+// onlycities = [1, 2, 4, "México", "Perú", "España", 3].filter((element) => {
+//   // condicion
+//   if (typeof element === "string") {
+//     return element;
+//   }
+// });
+// console.log(onlycities);
 
-// //! filterCitiesReduced
-let onlycities2 = [1, 2, 4, "México", "Perú", "España", 3].filter((element) => {
-  return typeof element === "string" ? element : null;
-});
-console.log(onlycities2);
+// // //! filterCitiesReduced
+// let onlycities2 = [1, 2, 4, "México", "Perú", "España", 3].filter((element) => {
+//   return typeof element === "string" ? element : null;
+// });
+// console.log(onlycities2);
 
-// //! filterCitiesMostReduced
-const onlycities3 = [1, 2, 4, "México", "Perú", "España", 3].filter(
-  (element) => {
-    return typeof element === "string";
-  }
-);
+// // //! filterCitiesMostReduced
+// const onlycities3 = [1, 2, 4, "México", "Perú", "España", 3].filter(
+//   (element) => {
+//     return typeof element === "string";
+//   }
+// );
 
-console.log(onlycities3);
+// console.log(onlycities3);
 
-//! Practica Capitalized -> Pendiente
+// ! Practica capitalizar nombres de ciudades (incluyendo nombres compuestos)!
+const capitalizeMap1 = (arr) => {
+  let capCities = arr.map((city) => {
+    currentCity = city.split(" ");
 
-//  * Escribir una función
-//  * Reciba como parametro Un array de ciudades
-//  * Retornar las ciudades capitalizadas
-//  * capitalize(["méxicO", "CaraCas", "Los AngelEs", "estaMbuL"])
-//  * -> ['México', 'Caracas', 'Los angeles', 'Estambul']
-//  *
+    if (currentCity.length > 1) {
+      res = currentCity
+        .map((inner) => {
+          return `${inner[0].toUpperCase()}${inner.slice(1).toLowerCase()}`;
+        })
+        .join()
+        .replaceAll(",", " ");
 
-// const capitalize = (arr) => {
-//   let capCities = [];
-//   arr.forEach((city) => {
-//     let cityCapitalized = `${city[0].toUpperCase()}${city
-//       .slice(1)
-//       .toLowerCase()}`;
-//     capCities.push(cityCapitalized);
-//   });
-//   return capCities;
-// };
+      return res;
+    } else {
+      return `${city[0].toUpperCase()}${city.slice(1).toLowerCase()}`;
+    }
+  });
 
-// result = capitalize(["méxicO", "CaraCas", "Los AngelEs", "estaMbuL"]);
+  //   return capCities;
+  return capCities;
+};
 
-// console.log(result);
+let result = capitalizeMap1([
+  "méxicO",
+  "RIo",
+  "Los AngelEs",
+  "esta ES unA ciuDAD",
+]);
 
-//
-// Ejercicio 2 *Opcional
-// Función que reciba como parámetro una array de strings
-// y devuelva el primer y último carácter de cada string
-// p.ej.
-// // -> firstAndLast ( ['hola', 'mundo'] ) -> ['ha', 'mo']
-//
+console.log(result);
