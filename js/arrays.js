@@ -348,7 +348,6 @@ let rest = a
   });
 
 console.log(rest);
-S;
 
 //! filtrar y transformar un array
 // let a = ["ferdinand", "ana"];
@@ -365,3 +364,9 @@ S;
 
 // console.log(rest);
 // S;
+
+const student = {
+  name: "David Rayy",
+  sclass: "VI",
+  rollno: 12,
+};
