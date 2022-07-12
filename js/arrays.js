@@ -211,26 +211,51 @@ const capitalizeMap = (arr) => {
 //! 3. Filter
 // ! 3.1Crea un nuevo array filtrado
 // ! 3.2Recibe una callback function con los argumentos definidos
-// ! 3.2.1Current value
-// ! 3.2.2Index
+// ! 3.2.1 Current value
+// ! 3.2.2 Index
 // ! 3.2.3 Array objetivo
 //! 3.4 El filtrado lo hacemos dentro de la función callback
 //! 3.5 Crea un nuevo array con las modificaciones indicadas
 //! 3.6 La función callback debe tener un return
 
-let newArr = [10, 20, 30, 41];
+let newArr = [10, 22, 30, 41];
 
 // -> [10,20,30]
 
 let soloPares = newArr.filter((currentValue, index, copiaArrOriginal) => {
-  // condicion
+  // Condicion
   if (currentValue % 2 === 0) {
-    // console.log(index, currentValue)
     return currentValue;
   }
 });
 
 console.log(soloPares);
+
+// Demo Reduce reducido
+
+//! Demo1  filterCities
+// let onlycities = [];
+// onlycities = [1, 2, 4, "México", "Perú", "España", 3].filter((element) => {
+//  // condicion
+//  if (typeof element === "string") {
+//    return element;
+//  }
+// });
+// console.log(onlycities);
+
+// //! filterCitiesReduced
+// let onlycities2 = [1, 2, 4, "México", "Perú", "España", 3].filter((element) => {
+//  return typeof element === "string" ? element : null;
+// });
+// console.log(onlycities2);
+
+// //! filterCitiesMostReduced
+// const onlycities3 = [1, 2, 4, "México", "Perú", "España", 3].filter(
+//  (element) => {
+//    return typeof element === "string";
+//  }
+// );
+// console.log(onlycities3);
 
 //! Practica Capitalized -> Pendiente
 
