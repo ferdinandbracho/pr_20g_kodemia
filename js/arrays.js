@@ -84,14 +84,14 @@
 //   console.log("Este es el mensaje: ", msg);
 // };
 
-// const b = (funcion) => {
+// const b = (x) => {
 //   msg = "este es el mensaje";
 
-//   funcion();
+//   x();
 
 // };
 
-// b(a, otro);
+// b(a);
 
 // ! Metodos funcionales de Arrays
 
@@ -138,44 +138,44 @@
 
 // console.log(koderMayus);
 
-// ! Practica forEach
-// /**
-//  * Escribir una función
-//  * Reciba como parametro Un array de ciudades
-//  * Retornar las ciudades capitalizadas
-//  * capitalize(['méxicO','RIo', 'Los AngelEs'])
-//  * -> ['México','Rio', 'Los Angeles']
-//  * Usar el metodo de array ForEach
-//  */
-const capitalize = (arr) => {
-  let capCities = [];
+// // ! Practica forEach
+// // /**
+// //  * Escribir una función
+// //  * Reciba como parametro Un array de ciudades
+// //  * Retornar las ciudades capitalizadas
+// //  * capitalize(['méxicO','RIo', 'Los AngelEs'])
+// //  * -> ['México','Rio', 'Los Angeles']
+// //  * Usar el metodo de array ForEach
+// //  */
+// const capitalize = (arr) => {
+//   let capCities = [];
 
-  arr.forEach((city) => {
-    // ! evaluar nombre compuesto
-    // if (city.split(' ').lenght > 1){
-    //     city.forEach
-    // }
+//   arr.forEach((city) => {
+//     // ! evaluar nombre compuesto
+//     // if (city.split(' ').lenght > 1){
+//     //     city.forEach
+//     // }
 
-    let texto = "Ferdinand";
+//     let texto = "Ferdinand";
 
-    texto.slice();
+//     texto.slice();
 
-    let cityCapitalized = `${city[0].toUpperCase()}${city
-      .slice(1)
-      .toLowerCase()}`;
+//     let cityCapitalized = `${city[0].toUpperCase()}${city
+//       .slice(1)
+//       .toLowerCase()}`;
 
-    capCities.push(cityCapitalized);
-  });
+//     capCities.push(cityCapitalized);
+//   });
 
-  return capCities;
-};
-capitalize(["méxicO", "RIo", "Los AngelEs"]);
+//   return capCities;
+// };
+// capitalize(["méxicO", "RIo", "Los AngelEs"]);
 
 //! 2. Map
 // ! 2.1Crea un nuevo array transformado
 // ! 2.2Recibe una callback function con los argumentos definidos
-// ! 2.2.1Current value
-// ! 2.2.2Index
+// ! 2.2.1 Current value
+// ! 2.2.2 Index
 // ! 2.2.3 Array objetivo
 // ! 2.3Crea un nuevo array con las modificaciones indicadas
 // ! 2.4 La función callback debe tener un return
@@ -192,21 +192,21 @@ capitalize(["méxicO", "RIo", "Los AngelEs"]);
 // console.log(arr);
 
 // ! Practica .Map
-// /**
-// * Escribir una función
-// * Reciba como parámetro Un array de ciudades
-// * Retornar las ciudades capitalizadas
-// * capitalize(['méxicO','RIo', 'Los AngelEs'])
-// * -> ['México','Rio', 'Los Angeles']
-// * Usar el método de array Map
-// */
+/**
+* Escribir una función
+* Reciba como parámetro Un array de ciudades
+* Retornar las ciudades capitalizadas
+* capitalize(['méxicO','RIo', 'Los AngelEs'])
+* -> ['México','Rio', 'Los Angeles']
+* Usar el método de array Map
+*/
 
 // const capitalizeMap = (arr) => {
 //   let capCities = arr.map((city) => {
 //     return `${city[0].toUpperCase()}${city.slice(1).toLowerCase()}`;
 //   });
 //   return capCities;
-// };
+// // };
 
 //! 3. Filter
 // ! 3.1Crea un nuevo array filtrado
@@ -258,98 +258,167 @@ capitalize(["méxicO", "RIo", "Los AngelEs"]);
 
 // console.log(onlycities3);
 
-// ! Practica capitalizar nombres de ciudades (incluyendo nombres compuestos)!
-const capitalizeMap1 = (arr) => {
-  let capCities = arr.map((city) => {
-    currentCity = city.split(" ");
+// // ! Practica capitalizar nombres de ciudades (incluyendo nombres compuestos)!
+// const capitalizeMap1 = (arr) => {
+//   let capCities = arr.map((city) => {
+//     currentCity = city.split(" ");
 
-    if (currentCity.length > 1) {
-      res = currentCity
-        .map((inner) => {
-          return `${inner[0].toUpperCase()}${inner.slice(1).toLowerCase()}`;
-        })
-        .join()
-        .replaceAll(",", " ");
+//     if (currentCity.length > 1) {
+//       res = currentCity
+//         .map((inner) => {
+//           return `${inner[0].toUpperCase()}${inner.slice(1).toLowerCase()}`;
+//         })
+//         .join()
+//         .replaceAll(",", " ");
 
-      return res;
-    } else {
-      return `${city[0].toUpperCase()}${city.slice(1).toLowerCase()}`;
-    }
-  });
+//       return res;
+//     } else {
+//       return `${city[0].toUpperCase()}${city.slice(1).toLowerCase()}`;
+//     }
+//   });
 
-  //   return capCities;
-  return capCities;
-};
+//   //   return capCities;
+//   return capCities;
+// };
 
-let result = capitalizeMap1([
-  "méxicO",
-  "RIo",
-  "Los AngelEs",
-  "esta ES unA ciuDAD",
-]);
+// let result = capitalizeMap1([
+//   "méxicO",
+//   "RIo",
+//   "Los AngelEs",
+//   "esta ES unA ciuDAD",
+// ]);
 
-console.log(result);
+// console.log(result);
 
-// Función que reciba un array de nombre y esta debe devolver un string con las iniciales de los nombre
+// ! 4 Reduce 
+// ! REcibe dos argumento un callback fun y un initialValue (defaut a 0)
+  // ! su callbcak recibe 4 paremetros predefinidos
+    // ! Total o Previous Value o accumuladr, Cv, Index, Copia Array 
 
-// getInitial(['Ferdinand','Jose','Maria','Dora']) -> FJMD
+  //   let arr = [1,2,3,3,4,5]
 
-const names = ["Ferdinand", "Jose", "Maria", "Dora"];
+  //   const cbFun = (acumualudar, cv) => {
+  //     acumualudar +=  cv
+  //     return acumualudar
+  // }
 
-result = names.reduce((acc, cv) => {
-  return (acc += cv[0]);
-}, "");
+  //   let result = arr.reduce(cbFun, 1000) 
 
-console.log(result);
+  //   console.log(result)
 
-function Mentor(nombre, apellido, edad, altura) {
-  this.nombre = nombre;
-  this.apellido = apellido;
-  this.edad = edad;
-  this.altura = altura;
-}
 
-ferdinand = new Mentor("ferdinand", "Bracho", 30, "1.79");
+    const koders = ['kelly', 'sebas','Adrian']
 
-console.log(ferdinand);
+    result = koders.reduce((acc, cv) => {
+      acc.push(cv[0]);
+      return acc;
+     }, []);
 
-/**
- * Ejercicio 2.
- * Dado un objeto inicial, hacer los siguientes puntos
- *
- * 1. Agregar el lenguaje 'Go' a la lista de lenguajes
- * 2. Cambiar el nivel a 4
- * 3. Eliminar la propiedad avatar
- * 4. Agregar una nueva propiedad de edad y poner el valor de 30
- * 5. Imprimir en consola todos los lenguajes dominados
- * 6. Clonar el objeto en uno nuevo
- * 7. Imprimir en consola el nuevo objeto
- *
- * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
- */
 
-let koder = {
-  languages: ["JavaScript", "Python", "Ruby"],
-  isMentor: true,
-  level: 3,
-  avatar: "https://picsum.photos/200/300",
-};
+     result2 = koders.reduce((acc, cv) => {
+       acc += `${cv} `;
+       return acc;
+      }, '');
+     
 
-let a = ["ferdinand", "ana"];
+    console.log(result)
+    console.log(result2)
 
-let rest = a
-  .filter((c) => {
-    if (c[0] === "a") {
-      return c;
-    }
-  })
-  .map((c) => {
-    return c[0].toUpperCase() + c.slice(1).toLocaleLowerCase();
-  });
 
-console.log(rest);
 
-//! filtrar y transformar un array
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Función que reciba un array de nombre y esta debe devolver un string con las iniciales de los nombre
+
+// // getInitial(['Ferdinand','Jose','Maria','Dora']) -> FJMD
+
+// const names = ["Ferdinand", "Jose", "Maria", "Dora"];
+
+// result = names.reduce((acc, cv) => {
+//   return (acc += cv[0]);
+// }, "");
+
+// console.log(result);
+
+// function Mentor(nombre, apellido, edad, altura) {
+//   this.nombre = nombre;
+//   this.apellido = apellido;
+//   this.edad = edad;
+//   this.altura = altura;
+// }
+
+// ferdinand = new Mentor("ferdinand", "Bracho", 30, "1.79");
+
+// console.log(ferdinand);
+
+// /**
+//  * Ejercicio 2.
+//  * Dado un objeto inicial, hacer los siguientes puntos
+//  *
+//  * 1. Agregar el lenguaje 'Go' a la lista de lenguajes
+//  * 2. Cambiar el nivel a 4
+//  * 3. Eliminar la propiedad avatar
+//  * 4. Agregar una nueva propiedad de edad y poner el valor de 30
+//  * 5. Imprimir en consola todos los lenguajes dominados
+//  * 6. Clonar el objeto en uno nuevo
+//  * 7. Imprimir en consola el nuevo objeto
+//  *
+//  * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+//  */
+
+// let koder = {
+//   languages: ["JavaScript", "Python", "Ruby"],
+//   isMentor: true,
+//   level: 3,
+//   avatar: "https://picsum.photos/200/300",
+// };
+
 // let a = ["ferdinand", "ana"];
 
 // let rest = a
@@ -363,10 +432,19 @@ console.log(rest);
 //   });
 
 // console.log(rest);
-// S;
 
-const student = {
-  name: "David Rayy",
-  sclass: "VI",
-  rollno: 12,
-};
+// //! filtrar y transformar un array
+// // let a = ["ferdinand", "ana"];
+
+// // let rest = a
+// //   .filter((c) => {
+// //     if (c[0] === "a") {
+// //       return c;
+// //     }
+// //   })
+// //   .map((c) => {
+// //     return c[0].toUpperCase() + c.slice(1).toLocaleLowerCase();
+// //   });
+
+// // console.log(rest);
+// // S;
