@@ -193,13 +193,13 @@
 
 // ! Practica .Map
 /**
-* Escribir una función
-* Reciba como parámetro Un array de ciudades
-* Retornar las ciudades capitalizadas
-* capitalize(['méxicO','RIo', 'Los AngelEs'])
-* -> ['México','Rio', 'Los Angeles']
-* Usar el método de array Map
-*/
+ * Escribir una función
+ * Reciba como parámetro Un array de ciudades
+ * Retornar las ciudades capitalizadas
+ * capitalize(['méxicO','RIo', 'Los AngelEs'])
+ * -> ['México','Rio', 'Los Angeles']
+ * Usar el método de array Map
+ */
 
 // const capitalizeMap = (arr) => {
 //   let capCities = arr.map((city) => {
@@ -290,89 +290,36 @@
 
 // console.log(result);
 
-// ! 4 Reduce 
+// ! 4 Reduce
 // ! REcibe dos argumento un callback fun y un initialValue (defaut a 0)
-  // ! su callbcak recibe 4 paremetros predefinidos
-    // ! Total o Previous Value o accumuladr, Cv, Index, Copia Array 
+// ! su callbcak recibe 4 paremetros predefinidos
+// ! Total o Previous Value o accumuladr, Cv, Index, Copia Array
 
-  //   let arr = [1,2,3,3,4,5]
+//   let arr = [1,2,3,3,4,5]
 
-  //   const cbFun = (acumualudar, cv) => {
-  //     acumualudar +=  cv
-  //     return acumualudar
-  // }
+//   const cbFun = (acumualudar, cv) => {
+//     acumualudar +=  cv
+//     return acumualudar
+// }
 
-  //   let result = arr.reduce(cbFun, 1000) 
+//   let result = arr.reduce(cbFun, 1000)
 
-  //   console.log(result)
+//   console.log(result)
 
+// const koders = ["kelly", "sebas", "Adrian"];
 
-    const koders = ['kelly', 'sebas','Adrian']
+// result = koders.reduce((acc, cv) => {
+//   acc.push(cv[0]);
+//   return acc;
+// }, []);
 
-    result = koders.reduce((acc, cv) => {
-      acc.push(cv[0]);
-      return acc;
-     }, []);
+// result2 = koders.reduce((acc, cv) => {
+//   acc += `${cv} `;
+//   return acc;
+// }, "");
 
-
-     result2 = koders.reduce((acc, cv) => {
-       acc += `${cv} `;
-       return acc;
-      }, '');
-     
-
-    console.log(result)
-    console.log(result2)
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(result);
+// console.log(result2);
 
 // // Función que reciba un array de nombre y esta debe devolver un string con las iniciales de los nombre
 
@@ -448,3 +395,160 @@
 
 // // console.log(rest);
 // // S;
+
+/**
+ * Ejercicio 1.
+ * Realizar una funcion que tome como parametro un objeto
+ * y devuelva un array de arrays con la siguiente estructura
+ * [ [key, value], [key, value] ]
+ * makePairs( { a: 1, b: 2 } )
+ * => [ ['a', 1], ['b', 2]]
+ *
+ *
+ * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+ * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+ *
+ * Se tiene que realizar 2 soluciones,
+ * 1 con Object.entries() y
+ *  Otra con .map()
+ */
+// solución con .entries()
+const makePairs = (obj) => {
+  return Object.entries(obj);
+};
+
+// solución con .map()
+const makePairsMap = (obj) => {
+  return Object.keys(obj).map((cv) => {
+    return [cv, obj[cv]];
+  });
+};
+
+/**
+* Dado un objeto de salarios
+* Crear una funcion que retorne una lista 
+* con los salarios ordenados de menor a mayor
+* orderSalary( salarios)
+* -> [4000, 5000, 7000] 
+
+hint -> Usar metodo de array sort()
+*/
+
+let salarios = {
+  juan: 7000,
+  Albert: 4000,
+  jorge: 5000,
+};
+
+const orderSalary = (obj) => {
+  let listaSalarios = Object.values(obj);
+  listaSalarios.sort();
+  return listaSalarios;
+};
+
+const orderSalarySmall = (obj) => Object.values(obj).sort();
+
+let orderedSalarios = orderSalarySmall(salarios);
+console.log(orderedSalarios);
+
+/**
+ * Dado un array de objetos koders
+ * Imprimir en consola, todos los nombres de cada koder
+ *
+ * 'jorge luis Camarillo tiene 30 años y es de la generacion 6'
+ * 'Erik Gutierrez tiene 30 años y es de la generacion 16'
+ * ....
+ *
+ */
+
+let koders = [
+  {
+    name: "Ferdinand",
+    lastName: "Bracho",
+    age: 30,
+    generation: 2,
+    modulos: ["js", "python", "git/github"],
+  },
+  {
+    name: "jose",
+    lastName: "Hernandez",
+    age: 20,
+    generation: 13,
+    modulos: ["NodeJs"],
+  },
+  {
+    name: "Dora",
+    lastName: "Mesa",
+    age: 27,
+    generation: 16,
+    modulos: ["HTML / CSS"],
+  },
+];
+
+koders.forEach((objCompleto, index, arrayObj) => {
+  console.log(`
+      ${objCompleto.name} ${objCompleto.lastName}  
+      tiene ${objCompleto.age} años y es  
+      de la generacion ${objCompleto.generation}
+  `);
+});
+
+/**
+ * Del mismo array de koders
+ * Obtener la suma de todas las edades
+ *
+ */
+
+let totalAge = 0;
+koders.forEach((objCompleto, index, arrayObj) => {
+  totalAge += objCompleto.age;
+});
+console.log(totalAge);
+
+let totalAgeREd = koders.reduce((acc, cv) => {
+  return acc + cv.age;
+}, 0);
+
+console.log(totalAgeREd);
+
+/**
+ * Del objeto library
+ * 1. Obtener el numero de libros que se estan leyendo
+ * 2. Obtener una lista de todos los autores
+ * 3. Obtener una lista de todos los Libros
+ *
+ */
+let library = [
+  {
+    author: "Bill Gates",
+    title: "The Road Ahead",
+    readingStatus: true,
+  },
+  {
+    author: "Steve Jobs",
+    title: "Walter Isaacson",
+    readingStatus: true,
+  },
+  {
+    author: "Suzanne Collins",
+    title: "Mockingjay: The Final Book of The Hunger Games",
+    readingStatus: false,
+  },
+];
+
+let totalReading = library.reduce((total, libro) => {
+  return libro.readingStatus ? (total += 1) : total;
+}, 0);
+
+console.log(totalReading);
+
+let authors = library.map((author) => {
+  return author.author;
+});
+console.log(authors);
+
+let books = library.map((book) => {
+  return book.title;
+});
+
+console.log(books);
