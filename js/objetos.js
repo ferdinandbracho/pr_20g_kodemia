@@ -146,25 +146,142 @@
 //     iteracion++
 // }
 
+// ! spread operator syntax 
+// const a = {
+//   first: 'first'
+// }
+
+// const b = {...a}
+
+// b.first = 'second'
+
+// console.log(b)
+
+// console.log(a)
+
+//! Demo suma notas diversos metodos apartir del Obj.values()
+// const notas = {
+//   1: 10,
+//   2: 7,
+//   3: 5
+// }
+
+// let arrNotas = Object.values(notas)
+
+// console.log(arrNotas)
+
+// // Suma de notas usando for -> silvestre 
+
+// // let total = 0
+// // for(let i = 0; i < arrNotas.length; i++){
+// //   total += arrNotas[i]
+// // }
+
+// // console.log(total)
+
+
+// // Suma de notas con forEach 
+
+// let total = 0
+// Object.values(notas).forEach(nota => total += nota)
+
+// console.log(total)
+
+// // Suma de la notas usando un reduce 
+
+// // totalNotasSemestre = 58
+// let total3 = Object.values(notas).reduce((acc, notas) => {
+//   acc += notas
+//   return acc
+// },)
+
+// console.log(total3)
+
 // ! Metodos de objetos 
-
-
 // Docs -> https://www.programiz.com/javascript/library/object
-  // Keys
-  // Create
-  // Entrie
-  // Seal
-  // values
-  // Assign
+  // Keys ->  Christohper 
+  // Create -> Eduardo Ram
+  // Entries -> Adrian  
+  // Seal -> Jose 
+  // values -> Mariana
+  // Assign -> Jonathan
+  // Freeze
+  // is - 
+
+  
+// const a = {
+//   a: 'ferdi'
+// }
+// const b = Object.create(a)
+
+// console.log(b)
+
+// const objTest = {
+//   a : 'a',
+//   b: 'b',
+//   c: 'a'
+// }
 
 
-  const a = {
-    first: 'first'
-  }
+// Object.freeze(objTest);
 
-  const b = {...a}
+// objTest.a = 'vvvvvv'
 
-  b.first = 'second'
+// console.log(objTest)
 
-  console.log(b)
-  console.log(a)
+// ! metodos de nuestros objetos 
+// const mentor = {
+//   firstName: "ferdinand",
+//   lastName: "bracho",
+//   module: {
+//     javaScript: true,
+//     git: true,
+//     backend: false,
+//   },
+//   t: [1, 2, 3, 4],
+//   fullName: function () {
+//     return this.firstName + " " + this.lastName;
+//   }
+//  };
+//  console.log(mentor.fullName());
+ 
+
+// ? This 
+// ?https://www.geeksforgeeks.org/this-in-javascript/
+
+// ! Funciones constructuras 
+// function Mentor(nombre, apellido, edad, altura) {
+//   this.nombre = nombre;
+//   this.apellido = apellido;
+//   this.edad = edad;
+//   this.altura = altura;
+//  }
+  
+//  ferdinand = new Mentor("ferdinand", "Bracho", 30, "1.79");
+  
+//  console.log(ferdinand);
+
+//  ! Clases para contruir objetos 
+// class Koder {
+//   constructor(firstName, age){
+//     this.firstName = firstName
+//     this.age = age
+//   }
+//  }
+
+//  let sofy = new Koder('Sofy', 0)
+//  console.log(sofy)
+
+
+//! Practica -> crear arrays de arrays apartir de un obj usando .map solución con .map()
+// const makePairsMap = (obj) => {
+
+//   return Object.keys(obj).map( (cv) => {
+//               return [cv, obj[cv]]
+//           })
+
+//  }
+
+//  let r = makePairsMap({ a: 1, b: 2 } )
+
+//  console.log(r)
