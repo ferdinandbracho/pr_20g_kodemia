@@ -115,14 +115,14 @@
 
 // ! iterar sobre objetos
 
-const koder = {
-    fisrtName: "Luis",
-    lastName: "Rdz",
-    isActive: true
-  };
+// const koder = {
+//     fisrtName: "Luis",
+//     lastName: "Rdz",
+//     isActive: true
+//   };
   
-koder.modules = { html: true, css: true };
-koder.test = {test: 'esto es una prueba' };
+// koder.modules = { html: true, css: true };
+// koder.test = {test: 'esto es una prueba' };
 
 
 // for (propiedad in koder) {
@@ -139,9 +139,32 @@ koder.test = {test: 'esto es una prueba' };
 
 // console.log(koder['fisrtName'])
 
-let iteracion = 1
-for (cv in koder){
-    console.log('cv es igual a: ',cv, 'en la iteracion', iteracion)
-    console.log('el valor de cv es: ',koder[cv])
-    iteracion++
-}
+// let iteracion = 1
+// for (cv in koder){
+//     console.log('cv es igual a: ',cv, 'en la iteracion', iteracion)
+//     console.log('el valor de cv es: ',koder[cv])
+//     iteracion++
+// }
+
+// ! Metodos de objetos 
+
+
+// Docs -> https://www.programiz.com/javascript/library/object
+  // Keys
+  // Create
+  // Entrie
+  // Seal
+  // values
+  // Assign
+
+
+  const a = {
+    first: 'first'
+  }
+
+  const b = {...a}
+
+  b.first = 'second'
+
+  console.log(b)
+  console.log(a)
