@@ -285,3 +285,60 @@
 //  let r = makePairsMap({ a: 1, b: 2 } )
 
 //  console.log(r)
+
+// !  Metodos de objetos 
+// https://www.geeksforgeeks.org/this-in-javascript/
+
+// const koder = {
+//   fName :'Jose',
+//   lName : 'Perez',
+
+//   fullName: function()  {
+//     return this.fName + ' ' + this.lName;
+//   }
+// }
+
+// console.log(koder.fullName())
+
+// 'hola'.trim()
+
+// const string = {
+//   lenght: 
+//   trum: function(){
+//     if (this.startWith(' '))
+//   }
+// }
+
+// let text 
+
+// ! Funciones constructuras de objetos 
+
+// function Mentor(nombre, apellido, edad) {
+//   this.nombre = nombre;
+//   this.apellido = apellido;
+//   this.edad = edad
+// }
+
+// const alfredo = new Mentor('Alfredo', 'Pi', 28)
+
+// const ferdinand = new Mentor('Ferdinand', 'Bra', 30)
+
+// console.log(alfredo)
+
+// console.log(ferdinand)
+
+// ! Clases En js 
+
+// class Car {
+//   constructor(color, modelo){
+//     this.color = color;
+//     this.modelo = modelo;
+//   }
+// }
+
+// // let coche1 = new Car('rojo', 'modelo1')
+
+// // console.log(coche1)
+
+
+
