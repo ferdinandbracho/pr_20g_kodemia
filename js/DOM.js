@@ -2,28 +2,46 @@
 // *----------------------------------------
 
 // ! Seleccionar elementos
-// ? Seleccionar por id
-// let test = document.getElementById('titulo');
-
-// ? Seleccionar por tag -> Multiples coincidencias
-// let test = document.getElementsByTagName('h1')
-
-// ? Seleccionar por clase  -> Multiples coincidencias
-// let test = document.getElementsByClassName('claseTest')
-
-// ! Seleccion por query id, clase  y tag -> Unica Coincidencia
 
 // ? Seleccionar por id
-// let test = document.querySelector('#titulo')
+// let test = document.getElementById('titulo'); -> Retorna una coincidencia 
 
-// ? Seleccionar por clase
-// let test = document.querySelector('.claseTest')
 
-// ? Seleccion por tag
-// let test = document.querySelector('h1')
+// // ? Seleccionar por tag -> Multiples coincidencias
+// let test2 = document.getElementsByTagName('p') -> Retorna multiples coincidencias
 
-// ! Seleccionar multiples conincidencias por query
-// let test2 = document.querySelectorAll('h1')
+// // ? Seleccionar por clase  -> Multiples coincidencias
+// let test3 = document.getElementsByClassName('button_cancel')  -> Retorna multiples coincidencias
+// let test33 = document.getElementsByClassName('button_aceept')  -> Retorna multiples coincidencias
+
+// // ! Seleccion por query id, clase  y tag -> Unica Coincidencia
+
+// // ? Seleccionar por id
+// let test4 = document.querySelector('#titulo')  -> Retorna una coincidencia 
+
+// // ? Seleccionar por clase
+// let test5 = document.querySelector('.claseTest')  -> Retorna una coincidencia 
+
+// // ? Seleccion por tag
+// let test6 = document.querySelector('h1')  -> Retorna una coincidencia 
+
+// // ! Seleccionar multiples conincidencias por query
+// let test7 = document.querySelectorAll('h1')  -> Retorna multiples coincidencias
+
+// HTMLCollection -> [<p>akjsndijasd</p>, <div>asdasd</div>]
+// NodeList -> [<p>akjsndijasd</p>, <div>asdasd</div>]
+
+// let parrafos = document.getElementsByClassName('parrafo')
+
+
+// console.log(parrafos) -> HTMLCollection -> [<p>1</p>, <p>1</p>,<p>1</p>,<p>1</p>,<p>1</p>]
+// parrafos[i].innerHTML = `sdnmfl;sndkjfnskjdnfjknsdkjlfnsjdnbfkjsdbflkjbsdkfbdf`
+
+// parrafos.forEach((cv) => {
+//     cv.innerHTML = `kjnsdfkjnsdknjsdf`
+// })
+// .lenght
+
 
 // * -------------------------------------
 // ! 1 Seleccionar el elemento
@@ -519,5 +537,3 @@
 
 
 
-
-funEvent()
