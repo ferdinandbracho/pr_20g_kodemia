@@ -173,6 +173,8 @@ input.addEventListener('input', () => {
 })
 
 
+
+
 const insertUSers = (arr) => {
     let list = document.querySelector('#list_users')
     list.innerHTML = ''
@@ -191,25 +193,25 @@ const insertUSers = (arr) => {
 
 
 
-// const requestGet = (url) => {
-//     const httpRequest = new XMLHttpRequest()
+const requestGet = (url) => {
+    const httpRequest = new XMLHttpRequest()
     
-//     let result = []
-//     httpRequest.onload = (e) => { 
-//         result = JSON.parse(e.target.responseText)
-//     }
+    let result = []
+    httpRequest.onload = (e) => { 
+        result = JSON.parse(e.target.responseText)
+    }
     
-//     httpRequest.open("GET", url, false)
+    httpRequest.open("GET", url, false)
     
-//     httpRequest.send() 
+    httpRequest.send() 
 
-//     return result 
-// }
+    return result 
+}
 
 
-// const users = requestGet('https://dummyjson.com/users')
+const users = requestGet('https://dummyjson.com/users')
 
-// console.log(users)
+console.log(users)
 
 
 
