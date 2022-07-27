@@ -30,10 +30,10 @@ const insertPost = (posts) => {
     let template = posts.reduce((acc, post) => {
         acc +=  `
             <div class="col">
-                <div class="card">
-                    <img src="https://picsum.photos/200" class="card-img-top" alt="img" />
+                <div class="card border-secondary">
+                    <img src="https://picsum.photos/1000" class="card-img-top" alt="img" width="400" height="400" />
                     <div class="card-body">
-                        <h5 class="card-title">=${post.title}</h5>
+                        <h5 class="card-title">${post.title}</h5>
                         <p class="card-text">
                             ${post.body}
                         </p>
