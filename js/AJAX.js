@@ -193,26 +193,49 @@ const insertUSers = (arr) => {
 
 
 
-const requestGet = (url) => {
-    const httpRequest = new XMLHttpRequest()
+// const requestGet = (url) => {
+//     const httpRequest = new XMLHttpRequest()
     
-    let result = []
-    httpRequest.onload = (e) => { 
-        result = JSON.parse(e.target.responseText)
-    }
+//     let result = []
+//     httpRequest.onload = (e) => { 
+//         result = JSON.parse(e.target.responseText)
+//     }
     
-    httpRequest.open("GET", url, false)
+//     httpRequest.open("GET", url, false)
     
-    httpRequest.send() 
+//     httpRequest.send() 
 
-    return result 
+//     return result 
+// }
+
+
+// const users = requestGet('https://dummyjson.com/users')
+
+// console.log(users)
+
+
+
+// ! Crear un usario con AJAX 
+
+const createUser = (user) => {
+    const httRequest = new XMLHttpRequest()
+
+    httRequest.onload = (e) => {
+        console.log(e.target.responseText)
+    }
+
+    httRequest.open("POST", 'https://kodemia-g20-default-rtdb.firebaseio.com/.json', false)
+
+    let userJson = JSON.stringify(user)
+
+    httRequest.send(userJson)
 }
 
 
-const users = requestGet('https://dummyjson.com/users')
-
-console.log(users)
-
+const userToCreate = {
+    firstName: "Ferdinand",
+    lastName: "Bracho"
+}
 
 
 
