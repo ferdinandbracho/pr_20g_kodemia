@@ -36,6 +36,8 @@
 
 // console.log(user)
 
+
+
     // ! JSON Parse -> de json a objeto
     // ! Para enviar request 
     // ? JSON.stringify(<Objecto>)
@@ -95,6 +97,12 @@
     //? PUT ->  Update : Global
     //? PATCH ->  Update : Parcial
     //? DELETE -> Delete
+
+    // ? CRUD 
+    // ? C -> create
+    // ? R -> Read : list - details  
+    // ? U -> Update : Global - Parcial 
+    // ? D -> Delete 
 
 
     // ! API - Application programming interface 
@@ -183,7 +191,25 @@ const insertUSers = (arr) => {
 
 
 
+// const requestGet = (url) => {
+//     const httpRequest = new XMLHttpRequest()
+    
+//     let result = []
+//     httpRequest.onload = (e) => { 
+//         result = JSON.parse(e.target.responseText)
+//     }
+    
+//     httpRequest.open("GET", url, false)
+    
+//     httpRequest.send() 
 
+//     return result 
+// }
+
+
+// const users = requestGet('https://dummyjson.com/users')
+
+// console.log(users)
 
 
 
