@@ -18,10 +18,6 @@ let postToRender = getData('https://dummyjson.com/posts')
 
 postToRender = postToRender.posts
 
-// ! Tarea 3 -> in progress 
-    // ! 3.1 - Seleciar elmento holder - quien recibe mis cards
-    // ! 3.2 contruir e insertar mi template 
-    // ! 3.3 Escuchar un evento para cargar data 
 
 let postsHolder = document.querySelector('.post_holder')
 
@@ -45,7 +41,6 @@ const insertPost = (posts) => {
         return acc
     }, '')
 
-    console.log(template)
 
     postsHolder.innerHTML = template
 }
@@ -54,5 +49,10 @@ const insertPost = (posts) => {
 document.addEventListener('DOMContentLoaded', ()=>{
     insertPost(postToRender)
 })
+
+
+
+
+
 
 
