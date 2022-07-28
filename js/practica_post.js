@@ -14,34 +14,28 @@ const getData = (url) => {
 }
 
 
-let postToRender = getData('https://dummyjson.com/posts')
-
-postToRender = postToRender.posts
-
+let postToRender = getData('https://kodemia-g20-default-rtdb.firebaseio.com/posts.json')
 
 let postsHolder = document.querySelector('.post_holder')
 
 const insertPost = (posts) => {
-
-    let template = posts.reduce((acc, post) => {
-        acc +=  `
-            <div class="col">
-                <div class="card border-secondary">
-                    <img src="https://picsum.photos/1000" class="card-img-top" alt="img" width="400" height="400" />
-                    <div class="card-body">
-                        <h5 class="card-title">${post.title}</h5>
-                        <p class="card-text">
-                            ${post.body}
-                        </p>
+    let template = ''
+    for (post in postToRender) {
+        template +=  `
+                <div class="col">
+                    <div class="card border-secondary">
+                        <img src="https://picsum.photos/1000" class="card-img-top" alt="img" width="400" height="400" />
+                        <div class="card-body">
+                            <h5 class="card-title">${postToRender[post].title}</h5>
+                            <p class="card-text">
+                                ${postToRender[post].body}
+                            </p>
+                            <strong>${postToRender[post].date}</strong>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-
-        return acc
-    }, '')
-
-
+            `
+    }
     postsHolder.innerHTML = template
 }
 
@@ -49,6 +43,11 @@ const insertPost = (posts) => {
 document.addEventListener('DOMContentLoaded', ()=>{
     insertPost(postToRender)
 })
+
+
+
+
+
 
 
 

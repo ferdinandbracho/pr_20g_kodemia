@@ -29,9 +29,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link fs-5" href="post.html">Post</a>
-          <!-- <a class="nav-link" href="#">Pricing</a>
-          <a class="nav-link disabled">Disabled</a> -->
+          <a class="nav-link fs-5" href="post.html">Posts</a>
+          <a class="nav-link fs-5" href="create_post.html">Create Post</a>
+
+          <!-- <a class="nav-link disabled">Disabled</a> -->
         </div>
       </div>
     </div>
@@ -46,13 +47,15 @@
       <div class="row d-flex justify-content-center">
         <form class="mt-5 w-50">
           <h2 class="text-center">Crea tu post</h2>
-          <div class="mb-3 mt-5">
+          <div class="alerts_holder"></div>
+          <div class="mb-3 mt-3">
             <label for="exampleInputEmail1" class="form-label">Titulo</label>
             <input
               type="text"
               class="form-control post_title_input"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
+              placeholder="Inserta el titulo"
             />
           </div>
           <div class="mb-3">
@@ -65,6 +68,7 @@
               id="exampleInputPassword1"
               cols="30"
               rows="10"
+              placeholder="Inserta el cuerpo de tu post"
             ></textarea>
           </div>
           <div class="mb-3">
@@ -76,7 +80,7 @@
               aria-describedby="emailHelp"
             />
           </div>
-          <button type="submit" class="btn btn-primary btn_create_post">
+          <button type="button" class="btn btn-primary btn_create_post mt-2">
             Crear Post
           </button>
         </form>

@@ -155,7 +155,7 @@ const ajaxFunction = (url, method="GET") =>  {
     return result.users
 }
 
-
+// ! practica cards grid in
 users = ajaxFunction('https://dummyjson.com/users')
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -215,27 +215,110 @@ const insertUSers = (arr) => {
 
 
 
-// ! Crear un usario con AJAX 
+// // ! Crear un usario con AJAX -> POST
+// const insertData = (obj) => {
+//     const httRequest = new XMLHttpRequest()
 
-const createUser = (user) => {
-    const httRequest = new XMLHttpRequest()
+//     httRequest.onload = (e) => {
+//         console.log(e.target.responseText)
+//     }
 
-    httRequest.onload = (e) => {
-        console.log(e.target.responseText)
-    }
+//     httRequest.open("POST", 'https://kodemia-g20-default-rtdb.firebaseio.com/post.json', false)
 
-    httRequest.open("POST", 'https://kodemia-g20-default-rtdb.firebaseio.com/.json', false)
+//     let objJson = JSON.stringify(obj)
 
-    let userJson = JSON.stringify(user)
-
-    httRequest.send(userJson)
-}
+//     httRequest.send(objJson)
+// }
 
 
-const userToCreate = {
-    firstName: "Ferdinand",
-    lastName: "Bracho"
-}
+// const post = {
+//     title: "este en un titulo",
+//     body: "body bodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybody",
+//     date: "07/27/22"
+// }
+
+
+// // //! Update Data -> PUT -> Update Global  
+// const updateData = (data, userId) => {
+//     const hResquest = new XMLHttpRequest()
+
+//     hResquest.onload = (e) => {
+//         console.log(e.target.responseText)
+//     }
+
+//     hResquest.open("PUT", `https://kodemia-g20-default-rtdb.firebaseio.com/user/${userId}.json`, false )
+
+//     hResquest.send(JSON.stringify(data))
+// }
+
+// const newData = {
+//     firstName: 'Sebas!',
+//     asdasd: 123
+// }
+
+
+// updateData(newData,'-N81LUE4h3Uiw5hajQGj')
+
+
+// // //! Update Data -> PATCH -> Update Parcial  
+// const updateData = (data, userId) => {
+//     const hResquest = new XMLHttpRequest()
+
+//     hResquest.onload = (e) => {
+//         console.log(e.target.responseText)
+//     }
+
+//     hResquest.open("PATCH", `https://kodemia-g20-default-rtdb.firebaseio.com/user/${userId}.json`, false )
+
+//     hResquest.send(JSON.stringify(data))
+// }
+
+// const newData = {
+//     firstName: 'Ferdinand Marco',
+//     lastName: 'askjdndsa'
+// }
+
+
+
+
+// updateData(newData, '-N81LUE4h3Uiw5hajQGj')
+
+
+// // //! Delete Data -> DELETE -> Eliminar  
+// const deleteData = (userId) => {
+//     const hResquest = new XMLHttpRequest()
+
+//     hResquest.onload = (e) => {
+//         console.log(e.target.responseText)
+//     }
+
+//     hResquest.open("DELETE", `https://kodemia-g20-default-rtdb.firebaseio.com/post/${userId}.json`, false )
+
+//     hResquest.send()
+// }
+
+
+
+// deleteData('-N81MqhNJf-WDfIyWUkI')
+
+
+
+// const functionAJAXTotal = (url, callback, userId, data, method="GET") => {
+//     const hResquest = new XMLHttpRequest()
+
+//     hResquest.onload = (e) => {
+//         let response = e.target.responseText
+//         callback(response)
+//     }
+
+//     hResquest.open(method, `${url}/${userId}.json`, false )
+
+//     if (data) {
+//         hResquest.send(JSON.stringify(data))
+//     } else {
+//         hResquest.send()
+//     }
+// }
 
 
 
