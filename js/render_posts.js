@@ -31,8 +31,8 @@ const insertPost = (posts) => {
                         <img src="https://picsum.photos/1000" class="card-img-top" alt="img" width="400" height="400" />
                         <div class="card-body">
                             <h5 class="card-title">${postToRender[post].title}</h5>
-                            <p class="card-text">
-                                ${postToRender[post].body}
+                            <p class="card-text" >
+                                ${postToRender[post].body.slice(0,200)}...
                             </p>
                             <hr>
                             <div class="d-flex justify-content-between p-2">
@@ -54,6 +54,8 @@ const insertPost = (posts) => {
 document.addEventListener('DOMContentLoaded', ()=>{
     insertPost(postToRender)
 })
+
+
 // ? Iniciamos con signo de interrogacion
 //? query params ?test=test
 //? Estructura es de llaves y valores (asociados a esa llave )
