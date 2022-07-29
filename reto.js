@@ -34,6 +34,7 @@
  * 
  * 
  * 7. Extra
+ * Organizar de forma limpia la estructura del proyecto, agregar comentarios si es posible
  * Reference text editor ->  https://quilljs.com/
  * Reference tags input -> https://www.jqueryscript.net/tags.php?/tags%20input
  * 
@@ -44,7 +45,8 @@
 // ! Opcional 
 /*
 * Scroll infinito
-* Busqueda 
+* Busqueda
+* Filtrado por tab de listado 
 * Reaccion en listado a boton "save"
 * Contabilidad real de reacciones
 * Comentarios y registo de los mismo en los posts
