@@ -46,8 +46,9 @@ createBtn.addEventListener('click' , (e)=>{
         `
 
         setTimeout(()=>{
-            alertHolder.innerHTML =''
+            alertHolder.innerHTML = ''
         }, 2000)
+
     } else {
         const postToInsert = {
             title: title,
@@ -70,10 +71,8 @@ createBtn.addEventListener('click' , (e)=>{
             
         }
         
-        // setTimeout(()=>{
-        //     window.location.href = '' 
-        // }, 1500)
-
+        setTimeout(()=>{
+            window.location.href = '/post.html' 
+        }, 1500)
     }
-
 } )
