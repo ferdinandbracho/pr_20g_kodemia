@@ -17,6 +17,21 @@ const getData = (url) => {
     return result
 }
 
+const deletePost = (url) => {
+    const httRequest = new XMLHttpRequest()
+
+    let result = []
+    httRequest.onload = (data) => {
+        result = JSON.parse(data.target.responseText)
+    }
+
+    httRequest.open("DELETE", url, false)
+
+    httRequest.send()
+
+    return result
+}
+
 
 let queryURL = window.location.search
 let postId = queryURL.substring(8)
@@ -26,8 +41,6 @@ let postId = queryURL.substring(8)
 let url = `https://kodemia-g20-default-rtdb.firebaseio.com/posts/${postId}.json`
  
 let postToRender = getData(url)
-
-console.log(postToRender)
 
 let cardHolder = document.querySelector('.card_holder')
 
@@ -49,7 +62,7 @@ document.addEventListener("DOMContentLoaded", (e)=> {
         <button type="button" class="btn btn-warning">Editar</button>
         </a>
         <a href="#">
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-danger delete_btn">Delete</button>
         </a>
     </div>
 
@@ -57,4 +70,10 @@ document.addEventListener("DOMContentLoaded", (e)=> {
     </div>
     </div> 
     `
+
+    document.querySelector('.delete_btn').addEventListener('click', (e) => {
+        deletePost(url)
+        window.location.href = '/post.html' 
+    })
+
 })
