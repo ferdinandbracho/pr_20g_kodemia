@@ -4,29 +4,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
     inputDatePost.value = ''
 })
 
-
 let createBtn = document.querySelector('.btn_create_post')
 let inputTitlePost = document.querySelector('.post_title_input')
 let inputBodyPost = document.querySelector('.post_body_input')
 let inputDatePost = document.querySelector('.post_date_input')
 let alertHolder = document.querySelector('.alerts_holder')
 
-// Todo Create ajax function to create the post in firebase/post
+// const insertPost = (post) => {
+//     const hRequest = new XMLHttpRequest()
 
-const insertPost = (post) => {
-    const hRequest = new XMLHttpRequest()
-
-    let newPostId;
-    hRequest.onload = (e) => {
-        newPostId = JSON.parse(e.target.responseText)
-    }
+//     let newPostId;
+//     hRequest.onload = (e) => {
+//         newPostId = JSON.parse(e.target.responseText)
+//     }
     
-    hRequest.open("POST",'https://kodemia-g20-default-rtdb.firebaseio.com/posts.json' , false)
+//     hRequest.open("POST",'https://kodemia-g20-default-rtdb.firebaseio.com/posts.json' , false)
 
-    hRequest.send(JSON.stringify(post))
+//     hRequest.send(JSON.stringify(post))
 
-    return newPostId.name
-}
+//     return newPostId.name
+// }
 
 createBtn.addEventListener('click' , (e)=>{
     e.preventDefault()
@@ -56,23 +53,57 @@ createBtn.addEventListener('click' , (e)=>{
             date: date
         }
 
-        let NewPost = insertPost(postToInsert)
-
-        if (NewPost)    {
-            alertHolder.innerHTML =  `
-            <div class="alert alert-success mt-4" role="alert">
-            Post creado con exito! 
-            </div>
-            `
-    
-            setTimeout(()=>{
-                alertHolder.innerHTML =''
-            }, 2000)
-            
-        }
         
-        setTimeout(()=>{
-            window.location.href = '/post.html' 
-        }, 1500)
+        fetch('https://kodemia-g20-default-rtdb.firebaseio.com/posts.json', {method: "POST",body: JSON.stringify(postToInsert),headers: {"Content-type": "application/json; charset=UTF-8"}})
+        .then((res)=>{
+                return res.json()
+        }).then((res)=>{
+                console.log(res)
+                if (res)    {
+                    alertHolder.innerHTML =  `
+                    <div class="alert alert-success mt-4" role="alert">
+                    Post creado con exito! 
+                    </div>
+                    `
+            
+                    setTimeout(()=>{
+                        alertHolder.innerHTML =''
+                    }, 2000)
+                    
+                }
+                
+                setTimeout(()=>{
+                    window.location.href = '/post.html' 
+                }, 1500)
+        }).catch((error)=>{
+             console.log(error)   
+        })
+
     }
 } )
+
+
+
+
+document.querySelector('.class').innerHTML = `
+    <di> </di>
+`
+!-- Include stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+<!-- Create the editor container -->
+<div id="editor">
+  <p>Hello World!</p>
+  <p>Some initial <strong>bold</strong> text</p>
+  <p><br></p>
+</div>
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<!-- Initialize Quill editor -->
+<script>
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+</script>

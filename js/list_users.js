@@ -1,130 +1,130 @@
     
-// ! AJAX - Asynchronous JavaScript and XML 
+// // ! AJAX - Asynchronous JavaScript and XML 
 
-//! Arquitecturas 
-    // ! Monolica 
-    // ! cliente - servidor 
+// //! Arquitecturas 
+//     // ! Monolica 
+//     // ! cliente - servidor 
 
-// ! CRUD 
-    // ! C -> create
-    // ! R -> Read : list - details  
-    // ! U -> Update : Global - Parcial 
-    // ! D -> Delete 
+// // ! CRUD 
+//     // ! C -> create
+//     // ! R -> Read : list - details  
+//     // ! U -> Update : Global - Parcial 
+//     // ! D -> Delete 
 
-//* Propiedades 
+// //* Propiedades 
 
-// * readyState
-//   *  /**
-//   * Holds the status of the XMLHttpRequest.
-//   * 0: request not initialized
-//   * 1: server connection established
-//   * 2: request received
-//   * 3: processing request
-//   * 4: request finished and response is ready
+// // * readyState
+// //   *  /**
+// //   * Holds the status of the XMLHttpRequest.
+// //   * 0: request not initialized
+// //   * 1: server connection established
+// //   * 2: request received
+// //   * 3: processing request
+// //   * 4: request finished and response is ready
 
-// * Status 
-    // * Docs -> https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
-
-
-    // ! Metodo HTTTP - Verbos HTTP 
-    //? GET -> Read
-    //? POST ->  create
-    //? PUT ->  Update : Global
-    //? PATCH ->  Update : Parcial
-    //? DELETE -> Delete
-
-    // ? CRUD 
-    // ? C -> create
-    // ? R -> Read : list - details  
-    // ? U -> Update : Global - Parcial 
-    // ? D -> Delete 
+// // * Status 
+//     // * Docs -> https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 
-    // ! API - Application programming interface 
-    // ! Endpoint - Accesos a los recursos y acciones 
+//     // ! Metodo HTTTP - Verbos HTTP 
+//     //? GET -> Read
+//     //? POST ->  create
+//     //? PUT ->  Update : Global
+//     //? PATCH ->  Update : Parcial
+//     //? DELETE -> Delete
 
-// ! Practica En clase 
-
-const filterUsers = (str, arr) => {
-    strTofilter = str.toLowerCase()
-
-    let filteredUsers = arr.filter((user) =>{
-        if(
-            user.firstName.toLowerCase().match(strTofilter) ||
-            user.username.toLowerCase().match(strTofilter) ||
-            user.email.toLowerCase().match(strTofilter)
-        ){
-            return user
-        }
-    })
-
-    return filteredUsers
-}
-
-const ajaxFunction = (url, method="GET") =>  {
-    // ? Instanciamos nuestro objeto
-    const xRe = new XMLHttpRequest()
-
-    let result = []
-    // ? Definir un callback en nuestro evento onload 
-    xRe.onload = (data) => {
-        if (data.target.readyState === 4)   {
-            if (
-                data.target.status >= 200 ||
-                data.target.status <= 399 
-                ){
-                    result = JSON.parse(data.target.responseText)
-            }
-            else if (data.target.status === 400)    {
-                console.log('sucedio un error')
-            }
-        }
-    } 
-
-    //? Abrir y setear nuestra peticion 
-    xRe.open(method,url, false)
-
-    // //? Enviar nuestra peticion 
-    xRe.send() 
-
-    return result.users
-}
-
-// ! practica cards grid in
-users = ajaxFunction('https://dummyjson.com/users')
-
-document.addEventListener('DOMContentLoaded', ()=>{
-    insertUSers(users)
-})
+//     // ? CRUD 
+//     // ? C -> create
+//     // ? R -> Read : list - details  
+//     // ? U -> Update : Global - Parcial 
+//     // ? D -> Delete 
 
 
-let findButton = document.querySelector('.find_user')
-let input = document.querySelector('.input_text')
+//     // ! API - Application programming interface 
+//     // ! Endpoint - Accesos a los recursos y acciones 
 
-input.addEventListener('input', () => {
-    strToFilter = input.value
-    result = filterUsers(strToFilter, users)
-    insertUSers(result)
-})
+// // ! Practica En clase 
+
+// const filterUsers = (str, arr) => {
+//     strTofilter = str.toLowerCase()
+
+//     let filteredUsers = arr.filter((user) =>{
+//         if(
+//             user.firstName.toLowerCase().match(strTofilter) ||
+//             user.username.toLowerCase().match(strTofilter) ||
+//             user.email.toLowerCase().match(strTofilter)
+//         ){
+//             return user
+//         }
+//     })
+
+//     return filteredUsers
+// }
+
+// const ajaxFunction = (url, method="GET") =>  {
+//     // ? Instanciamos nuestro objeto
+//     const xRe = new XMLHttpRequest()
+
+//     let result = []
+//     // ? Definir un callback en nuestro evento onload 
+//     xRe.onload = (data) => {
+//         if (data.target.readyState === 4)   {
+//             if (
+//                 data.target.status >= 200 ||
+//                 data.target.status <= 399 
+//                 ){
+//                     result = JSON.parse(data.target.responseText)
+//             }
+//             else if (data.target.status === 400)    {
+//                 console.log('sucedio un error')
+//             }
+//         }
+//     } 
+
+//     //? Abrir y setear nuestra peticion 
+//     xRe.open(method,url, false)
+
+//     // //? Enviar nuestra peticion 
+//     xRe.send() 
+
+//     return result.users
+// }
+
+// // ! practica cards grid in
+// users = ajaxFunction('https://dummyjson.com/users')
+
+// document.addEventListener('DOMContentLoaded', ()=>{
+//     insertUSers(users)
+// })
+
+
+// let findButton = document.querySelector('.find_user')
+// let input = document.querySelector('.input_text')
+
+// input.addEventListener('input', () => {
+//     strToFilter = input.value
+//     result = filterUsers(strToFilter, users)
+//     insertUSers(result)
+// })
 
 
 
 
-const insertUSers = (arr) => {
-    let list = document.querySelector('#list_users')
-    list.innerHTML = ''
-    arr.forEach((user) => {
-        list.innerHTML += `
-        <li class="list-group-item d-flex justify-content-between align-items-start bg-primary bg-gradient rounded-2 border border-1 border-secondary m-2">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">${user.firstName} - ${user.lastName}</div>
-            ${user.username}
-        </div>
-      </li>
+// const insertUSers = (arr) => {
+//     let list = document.querySelector('#list_users')
+//     list.innerHTML = ''
+//     arr.forEach((user) => {
+//         list.innerHTML += `
+//         <li class="list-group-item d-flex justify-content-between align-items-start bg-primary bg-gradient rounded-2 border border-1 border-secondary m-2">
+//         <div class="ms-2 me-auto">
+//           <div class="fw-bold">${user.firstName} - ${user.lastName}</div>
+//             ${user.username}
+//         </div>
+//       </li>
     
-        `
-    })
-}
+//         `
+//     })
+// }
 
 
 
@@ -147,7 +147,7 @@ const insertUSers = (arr) => {
 
 //         return acc
 //     }, '')
-
+// }
 
 //     ul.innerHTML = template
 // })
@@ -218,31 +218,29 @@ const insertUSers = (arr) => {
 // })
 
 
-let pastel = true
+// let pastel = true
 
-let encontrarPastel = new Promise((resolve, reject) => {
-    if (pastel){
-        resolve("encontrado")
-    }
-    else {
-        reject('No encontrado')
-    }
-})
+// let encontrarPastel = new Promise((resolve, reject) => {
+//     if (pastel){
+//         resolve("encontrado")
+//     }
+//     else {
+//         reject('No encontrado')
+//     }
+// })
 
-encontrarPastel
-.then(res => {
-    console.log(res)
-})
-.catch(res => {
-    console.log(res)
-})
-.finally(()=>{
-    console.log('el final')
-})
+// encontrarPastel
+// .then(res => {
+//     console.log(res)
+// })
+// .catch(res => {
+//     console.log(res)
+// })
+// .finally(()=>{
+//     console.log('el final')
+// })
 
-const encontrarPastel2 = async () => {
-    result = await encontrarPastel
-    console.log(result)
-}
-
-encontrarPastel2()
+// const encontrarPastel2 = async () => {
+//     result = await encontrarPastel
+//     console.log(result)
+// }

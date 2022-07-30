@@ -30,7 +30,6 @@ let postId = queryURL.substring(8)
 let url = `https://kodemia-g20-default-rtdb.firebaseio.com/posts/${postId}.json`
 
 let postToEdit = getData(url)
-console.log(postToEdit)
 
 document.addEventListener('DOMContentLoaded', ()=>{
     inputTitlePost.value = postToEdit.title
@@ -84,7 +83,6 @@ createBtn.addEventListener('click' , (e)=>{
         }
 
         let NewPost = insertPost(postToInsert, url)
-        console.log(NewPost)
 
         if (NewPost)    {
             alertHolder.innerHTML =  `

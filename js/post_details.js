@@ -18,19 +18,21 @@ const getData = (url) => {
 }
 
 const deletePost = (url) => {
-    const httRequest = new XMLHttpRequest()
-
-    let result = []
-    httRequest.onload = (data) => {
-        result = JSON.parse(data.target.responseText)
-    }
-
-    httRequest.open("DELETE", url, false)
-
-    httRequest.send()
-
-    return result
+fetch(url, {
+    method:"DELETE",
+    headers: {"Content-type": "application/json; charset=UTF-8"}
+})
+.then((res)=>{
+    return res.json()
+})
+.then((res)=>{
+    console.log(res)
+})
+.catch((error)=>{
+    console.log(error)
+})
 }
+
 
 
 let queryURL = window.location.search
@@ -75,5 +77,7 @@ document.addEventListener("DOMContentLoaded", (e)=> {
         deletePost(url)
         window.location.href = '/post.html' 
     })
+
+
 
 })
