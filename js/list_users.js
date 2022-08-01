@@ -43,88 +43,88 @@
 //     // ! API - Application programming interface 
 //     // ! Endpoint - Accesos a los recursos y acciones 
 
-// // ! Practica En clase 
+// ! Practica En clase 
 
-// const filterUsers = (str, arr) => {
-//     strTofilter = str.toLowerCase()
+const filterUsers = (str, arr) => {
+    strTofilter = str.toLowerCase()
 
-//     let filteredUsers = arr.filter((user) =>{
-//         if(
-//             user.firstName.toLowerCase().match(strTofilter) ||
-//             user.username.toLowerCase().match(strTofilter) ||
-//             user.email.toLowerCase().match(strTofilter)
-//         ){
-//             return user
-//         }
-//     })
+    let filteredUsers = arr.filter((user) =>{
+        if(
+            user.firstName.toLowerCase().match(strTofilter) ||
+            user.username.toLowerCase().match(strTofilter) ||
+            user.email.toLowerCase().match(strTofilter)
+        ){
+            return user
+        }
+    })
 
-//     return filteredUsers
-// }
+    return filteredUsers
+}
 
-// const ajaxFunction = (url, method="GET") =>  {
-//     // ? Instanciamos nuestro objeto
-//     const xRe = new XMLHttpRequest()
+const ajaxFunction = (url, method="GET") =>  {
+    // ? Instanciamos nuestro objeto
+    const xRe = new XMLHttpRequest()
 
-//     let result = []
-//     // ? Definir un callback en nuestro evento onload 
-//     xRe.onload = (data) => {
-//         if (data.target.readyState === 4)   {
-//             if (
-//                 data.target.status >= 200 ||
-//                 data.target.status <= 399 
-//                 ){
-//                     result = JSON.parse(data.target.responseText)
-//             }
-//             else if (data.target.status === 400)    {
-//                 console.log('sucedio un error')
-//             }
-//         }
-//     } 
+    let result = []
+    // ? Definir un callback en nuestro evento onload 
+    xRe.onload = (data) => {
+        if (data.target.readyState === 4)   {
+            if (
+                data.target.status >= 200 ||
+                data.target.status <= 399 
+                ){
+                    result = JSON.parse(data.target.responseText)
+            }
+            else if (data.target.status === 400)    {
+                console.log('sucedio un error')
+            }
+        }
+    } 
 
-//     //? Abrir y setear nuestra peticion 
-//     xRe.open(method,url, false)
+    //? Abrir y setear nuestra peticion 
+    xRe.open(method,url, false)
 
-//     // //? Enviar nuestra peticion 
-//     xRe.send() 
+    // //? Enviar nuestra peticion 
+    xRe.send() 
 
-//     return result.users
-// }
+    return result.users
+}
 
-// // ! practica cards grid in
-// users = ajaxFunction('https://dummyjson.com/users')
+// ! practica cards grid in
+users = ajaxFunction('https://dummyjson.com/users')
 
-// document.addEventListener('DOMContentLoaded', ()=>{
-//     insertUSers(users)
-// })
-
-
-// let findButton = document.querySelector('.find_user')
-// let input = document.querySelector('.input_text')
-
-// input.addEventListener('input', () => {
-//     strToFilter = input.value
-//     result = filterUsers(strToFilter, users)
-//     insertUSers(result)
-// })
+document.addEventListener('DOMContentLoaded', ()=>{
+    insertUSers(users)
+})
 
 
+let findButton = document.querySelector('.find_user')
+let input = document.querySelector('.input_text')
+
+input.addEventListener('input', () => {
+    strToFilter = input.value
+    result = filterUsers(strToFilter, users)
+    insertUSers(result)
+})
 
 
-// const insertUSers = (arr) => {
-//     let list = document.querySelector('#list_users')
-//     list.innerHTML = ''
-//     arr.forEach((user) => {
-//         list.innerHTML += `
-//         <li class="list-group-item d-flex justify-content-between align-items-start bg-primary bg-gradient rounded-2 border border-1 border-secondary m-2">
-//         <div class="ms-2 me-auto">
-//           <div class="fw-bold">${user.firstName} - ${user.lastName}</div>
-//             ${user.username}
-//         </div>
-//       </li>
+
+
+const insertUSers = (arr) => {
+    let list = document.querySelector('#list_users')
+    list.innerHTML = ''
+    arr.forEach((user) => {
+        list.innerHTML += `
+        <li class="list-group-item d-flex justify-content-between align-items-start bg-primary bg-gradient rounded-2 border border-1 border-secondary m-2">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">${user.firstName} - ${user.lastName}</div>
+            ${user.username}
+        </div>
+      </li>
     
-//         `
-//     })
-// }
+        `
+    })
+}
 
 
 
